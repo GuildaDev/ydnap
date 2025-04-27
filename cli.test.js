@@ -8,7 +8,6 @@ import { promisify } from "node:util";
 import { exec } from "node:child_process";
 // Local modules
 import { ERR_MISSING_TEMPLATE } from "./src/errors.js";
-import { writeFileSync } from "fs";
 
 const execAsync = promisify(exec);
 const CLI_PATH = resolve("./src/cli.js");
@@ -51,7 +50,7 @@ describe("YNDAP CLI", () => {
   it("Create a file passing an another github user", async () => {
     const targetFile = resolve("output", "is-even.js");
     await execAsync(
-      `node ${CLI_PATH} -t even -o ${targetFile} -u alexcastrodev/ydnap-example`,
+      `node ${CLI_PATH} -t even -o ${targetFile} -r alexcastrodev/ydnap-example`,
     );
     const content = await readFile(targetFile, "utf8");
     assert.ok(content.includes("export default function isEven"));

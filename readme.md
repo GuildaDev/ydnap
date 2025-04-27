@@ -16,7 +16,7 @@ In the end of the day, you maybe don't need Ramda, Lodash, date-fns, or any othe
 | `--verbose`   | boolean | `-v`  | `false` | N/A        | Enables verbose mode for detailed logging.                                      |
 | `--extension` | string  | `-e`  | `js`    | `js`, `ts` | Specifies the file extension to use (`js` for JavaScript, `ts` for TypeScript). |
 | `--template`  | string  | `-t`  | N/A     | N/A        | Specifies the template folder to use.                                           |
-| `--repo`      | string  | `-u`  | N/A     | N/A        | (Optional) Specifies the repository URL to fetch templates from.                |
+| `--repo`      | string  | `-r`  | N/A     | N/A        | (Optional) Specifies the repository URL to fetch templates from.                |
 | `--output`    | string  | `-o`  | N/A     | N/A        | (Optional) Specifies the output directory for generated files.                  |
 
 ## Installation

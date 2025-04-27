@@ -28,13 +28,19 @@ const options = {
   },
   repo: {
     type: "string",
-    short: "u",
+    short: "r",
   },
   output: {
     type: "string",
     short: "o",
   },
+  help: {
+    type: "boolean",
+    short: "h",
+  },
 };
+
+const { values } = parseArgs({ options, tokens: true });
 
 // ===========
 // Helpers
@@ -50,6 +56,31 @@ function log(...args) {
   if (values.verbose) {
     logStream.write(`YNDAP: ${args.join(" ")}\n`);
   }
+}
+
+// ===========
+// Help
+// ===========
+
+if (values.help) {
+  console.log(`
+Usage: ydnap [options]
+
+Options:
+  -t, --template <template>   Specify the template to use (required)
+  -e, --extension <js|ts>     Specify the file extension (default: js)
+  -o, --output <output>       Specify the output file or directory
+  -r, --repo <user/repo>      Specify a custom repository for templates
+  -v, --verbose               Enable verbose logging
+  -h, --help                  Display this help message
+
+Examples:
+  ydnap -t sum -e ts
+  ydnap -t sum -o ./output-dir
+  ydnap -t sum -r customuser/customrepo
+`);
+
+  process.exit(0);
 }
 
 /* @function buildTemplate
@@ -103,8 +134,6 @@ async function resolveOutput() {
   // No output provided → use template name in cwd
   return resolve(process.cwd(), `${template}.${extension}`);
 }
-
-const { values } = parseArgs({ options, tokens: true });
 
 // ===========
 // Validation
