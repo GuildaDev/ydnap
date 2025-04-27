@@ -1,6 +1,6 @@
 {
   "name": "@guildadev/ydnap",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A CLI that offers you templates for things you don't need a package for.",
   "bin": {
     "ydnap": "src/cli.js"
