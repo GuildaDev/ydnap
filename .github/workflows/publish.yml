@@ -19,6 +19,6 @@ jobs:
           scope: "@guildadev"
           cache: yarn
       - run: yarn install --frozen-lockfile
-      - run: npm publish --access public --non-interactive
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
