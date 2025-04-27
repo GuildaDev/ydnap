@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: "20.x"
           registry-url: "https://registry.npmjs.org"
+          scope: "@guildadev"
           cache: yarn
       - run: yarn install --frozen-lockfile
       - run: npm publish --access public --non-interactive
