@@ -17,7 +17,6 @@ In the end of the day, you maybe don't need ramda, lodash, date-fns, or any othe
 npx ydnap -t sum
 ```
 
-
 ## Drawbacks
 
 YDNAP is designed to solve small tasks, like navigating through objects with JavaScript or TypeScript (without needing the full weight of libraries like Ramda or Lodash), or creating a useDebounceCallback for React without installing an entire hooks library.
@@ -29,4 +28,3 @@ Similarly, for working with dates: if you need a simple isBetween utility inspir
 # References
 
 - [Assert Errors - Node.js Documentation](https://nodejs.org/api/assert.html#assertthrowsfn-error-message): Detailed explanation of how to use `assert.throws()` in Node.js.
-
