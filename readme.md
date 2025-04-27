@@ -7,7 +7,17 @@ It is designed to be lightweight and easy to use, easy to collaborate, without t
 
 Sick of installing packages just to archive a simple task? YDNAP is here to help!
 
-In the end of the day, you maybe don't need ramda, lodash, date-fns, or any other package to do simple tasks.
+In the end of the day, you maybe don't need Ramda, Lodash, date-fns, or any other package to do simple tasks.
+
+### CLI Options
+
+| Option        | Type    | Short | Default | Choices    | Description                                                                     |
+| ------------- | ------- | ----- | ------- | ---------- | ------------------------------------------------------------------------------- |
+| `--verbose`   | boolean | `-v`  | `false` | N/A        | Enables verbose mode for detailed logging.                                      |
+| `--extension` | string  | `-e`  | `js`    | `js`, `ts` | Specifies the file extension to use (`js` for JavaScript, `ts` for TypeScript). |
+| `--template`  | string  | `-t`  | N/A     | N/A        | Specifies the template folder to use.                                           |
+| `--repo`      | string  | `-u`  | N/A     | N/A        | (Optional) Specifies the repository URL to fetch templates from.                |
+| `--output`    | string  | `-o`  | N/A     | N/A        | (Optional) Specifies the output directory for generated files.                  |
 
 ## Installation
 
