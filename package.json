@@ -1,12 +1,12 @@
 {
-  "name": "ydnap",
-  "version": "1.0.0",
+  "name": "@guildadev/ydnap",
+  "version": "0.1.0",
   "description": "A CLI that offers you templates for things you don't need a package for.",
   "bin": {
-    "ydnap": "./src/cli.js"
+    "ydnap": "src/cli.js"
   },
   "scripts": {
-    "test": "node --test './test/**'",
+    "test": "node --test",
     "format": "prettier --write ."
   },
   "type": "module",
