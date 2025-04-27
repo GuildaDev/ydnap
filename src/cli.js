@@ -26,7 +26,7 @@ const options = {
     type: "string",
     short: "t",
   },
-  user: {
+  repo: {
     type: "string",
     short: "u",
   },
@@ -61,17 +61,17 @@ function log(...args) {
  */
 function buildTemplate() {
   const branch = "main";
-  const repo = "guildadev/ydnap-templates";
   const type = values.extension;
   const template = values.template;
-  const path = `src/${type}/${template}/index.${type}`;
+  let repo = values.repo || "guildadev/ydnap-templates";
+  let path = `src/${type}/${template}/index.${type}`;
 
-  if (values.user) {
-    path = `${type}/${values.user}/src/${template}/index.${type}`;
+  if (values.repo) {
+    path = `src/${template}/index.${type}`;
     log(`Building template URL: ${path}`);
   }
 
-  const url = `https://raw.githubusercontent.com/${repo}/${branch}/${path}`;
+  const url = `https://raw.githubusercontent.com/${repo}/refs/heads/${branch}/${path}`;
   log(`Template URL: ${url}`);
   return {
     url,

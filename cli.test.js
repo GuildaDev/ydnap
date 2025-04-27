@@ -36,6 +36,27 @@ describe("YNDAP CLI", () => {
     assert.ok(content.includes("export default function sum"));
   });
 
+  it("Create a file passing correct params, creating .ts by change extension", async () => {
+    const templateName = "sum";
+    const outputDir = resolve("output/sum");
+    const targetFile = resolve(outputDir, "sum.ts");
+    await execAsync(
+      `node ${CLI_PATH} -t ${templateName} -o ${outputDir} -e ts`,
+    );
+    const content = await readFile(targetFile, "utf8");
+
+    assert.ok(content.includes("export default function sum"));
+  });
+
+  it("Create a file passing an another github user", async () => {
+    const targetFile = resolve("output", "is-even.js");
+    await execAsync(
+      `node ${CLI_PATH} -t even -o ${targetFile} -u alexcastrodev/ydnap-example`,
+    );
+    const content = await readFile(targetFile, "utf8");
+    assert.ok(content.includes("export default function isEven"));
+  });
+
   // ============
   // Fail test case
   // ============

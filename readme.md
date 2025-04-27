@@ -9,13 +9,46 @@ Sick of installing packages just to archive a simple task? YDNAP is here to help
 
 In the end of the day, you maybe don't need ramda, lodash, date-fns, or any other package to do simple tasks.
 
-## Usage
+## Installation
 
-### Using with npx
+You can install YDNAP globally using npm:
 
 ```bash
-npx ydnap -t sum
+npm install -g ydnap
 ```
+
+Or you can use it without installing it by using npx:
+
+```bash
+npx ydnap
+```
+
+## Usage
+
+You can use YDNAP and create files using our [templates](https://github.com/GuildaDev/ydnap-templates), or you can create your own templates (or share them with your friiiiends).
+
+To use our template, you can run:
+
+```bash
+ydnap -t sum # or npx ydnap -t sum
+```
+
+by default, we will always find the javascript file.
+
+you can also specify the typescript file:
+
+```bash
+ydnap -t sum -l ts # or npx ydnap -t sum -l ts
+```
+
+Using you repository (eg https://github.com/alexcastrodev/ydnap-example/tree/main/src/even)
+
+```bash
+ydnap -u alexcastrodev/ydnap-example -t even
+```
+
+> **Note**  
+> It's mandatory that the `-t` (template) argument points to a folder, and the file inside the folder should be named `index.ts` or `index.js`.
 
 ## Drawbacks
 
