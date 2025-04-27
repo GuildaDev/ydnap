@@ -18,6 +18,10 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           scope: "@guildadev"
           cache: yarn
+      - name: Configure npm
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          echo "always-auth=true" >> ~/.npmrc
       - run: yarn install --frozen-lockfile
       - run: npm publish
         env:
