@@ -6,7 +6,7 @@
     "ydnap": "./src/cli.js"
   },
   "scripts": {
-    "test": "node --test './test/**'",
+    "test": "node --test",
     "format": "prettier --write ."
   },
   "type": "module",
